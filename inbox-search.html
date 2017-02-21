@@ -1,0 +1,45 @@
+<link rel="import" href="../paper-input/paper-input.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../icon-icons/iron-icons.html">
+<link rel="import" href="../polymer/polymer.html">
+<!--
+  `<inbox-search></inbox-search>` Search  Inbox
+  @demo demo.html
+-->
+<dom-module id="inbox-search">
+  <template>
+    
+    <paper-icon-button prefix icon="search" on-tap="toggleSearching"></paper-icon-button>
+    <template is="dom-if" if="[[searching]]">
+      <div style="position: absolute;top:0;width:98%;background:#fff;display:block;">
+        <paper-input label="[[label]]" value="{{value}}">
+          <paper-icon-button prefix icon="arrow-back" on-tap="toggleSearching"></paper-icon-button>
+          <template is="dom-if" if="[[value]]">
+            <paper-icon-button suffix icon="clear"></paper-icon-button>
+          </template>
+        </paper-input>
+      </div>
+    </template>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: "inbox-search",
+    properties:{
+      value:{
+        type:String,
+        notify:true,
+      },
+      label:{
+        type:String,
+        value:"search",
+      },
+    },
+    toggleSearching: function(undefined){
+      this.searching = !this.searching
+    },
+    clear: function(undefined){
+      this.value = ""
+    },
+  })
+</script>

@@ -9,7 +9,7 @@
   ],
   "dependencies": {
     "polymer": "polymer/polymer#~1.7.1",
-    "icon-icons": "*",
+    "iron-icons": "*",
     "paper-icon-button": "polymerelements/paper-icon-button#c5e1da4fb7",
     "paper-input": "*"
   },

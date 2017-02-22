@@ -38,7 +38,10 @@
     toggleSearching: function(){
       this.searching = !this.searching
       if (this.searching) {
-        this.$$("paper-input").focus()
+        var that = this;
+        if (this.options.destroyOnHide) {
+          setTimeout(function(){that.$$("paper-input").focus()}, 700);
+        }
       } else {
         this.value = ""
       }

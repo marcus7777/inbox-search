@@ -43,7 +43,9 @@
           this.setFocus = true
           setTimeout(function(){
             that.$$("paper-input").focus()
-            that.setFocus = false
+            setTimeout(function(){
+              that.setFocus = false
+            },3000)
           }, 700)
         }
       } else {

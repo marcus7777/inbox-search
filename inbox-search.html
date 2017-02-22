@@ -39,7 +39,12 @@
       this.searching = !this.searching
       if (this.searching) {
         var that = this
-        setTimeout(function(){that.$$("paper-input").focus()}, 700)
+        if (!this.setFocus) {
+          setTimeout(function(){
+            that.$$("paper-input").focus()
+            that.setFocus = false
+          }, 700)
+        }
       } else {
         this.value = ""
       }

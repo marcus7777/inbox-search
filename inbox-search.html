@@ -40,6 +40,7 @@
       if (this.searching) {
         var that = this
         if (!this.setFocus) {
+          this.setFocus = true
           setTimeout(function(){
             that.$$("paper-input").focus()
             that.setFocus = false

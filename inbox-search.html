@@ -35,8 +35,9 @@
         value:"search",
       },
     },
-    toggleSearching: function(){
+    toggleSearching: function(e){
       this.searching = !this.searching
+      console.log(e.target)
       if (this.searching) {
         var that = this
         if (!this.setFocus) {

@@ -8,14 +8,13 @@
 -->
 <dom-module id="inbox-search">
   <template>
-    
     <paper-icon-button prefix icon="search" on-tap="toggleSearching"></paper-icon-button>
     <template is="dom-if" if="[[searching]]">
       <div style="position:fixed;top:0px;background:#fff;display:block;left:0;right:0;z-index:11;color:black;">
         <paper-input label="[[label]]" value="{{value}}">
           <paper-icon-button prefix icon="arrow-back" on-tap="toggleSearching"></paper-icon-button>
           <template is="dom-if" if="[[value]]">
-            <paper-icon-button suffix icon="clear"></paper-icon-button>
+            <paper-icon-button suffix icon="clear" on-tap="clear"></paper-icon-button>
           </template>
         </paper-input>
       </div>
@@ -35,10 +34,10 @@
         value:"search",
       },
     },
-    toggleSearching: function(undefined){
+    toggleSearching: function(){
       this.searching = !this.searching
     },
-    clear: function(undefined){
+    clear: function(){
       this.value = ""
     },
   })

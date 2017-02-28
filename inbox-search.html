@@ -8,6 +8,11 @@
 -->
 <dom-module id="inbox-search">
   <template>
+    <style>
+      paper-input-container{
+        padding: 1px 0;
+      }
+    </style>
     <paper-icon-button prefix icon="search" on-tap="toggleSearching"></paper-icon-button>
     <template is="dom-if" if="[[searching]]">
       <div on-blur="toggleSearching" style="position:fixed;top:0px;background:#fff;display:block;left:0;right:0;z-index:11;color:black;">

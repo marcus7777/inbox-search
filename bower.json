@@ -11,7 +11,7 @@
     "polymer": "polymer/polymer#~1.8.0",
     "iron-icons": "*",
     "paper-icon-button": "polymerElements/paper-icon-button#c5e1da4fb7",
-    "paper-input": "polymerElements/paper-input"
+    "paper-input": "PolymerElements/paper-input#1.1.24"
   },
   "devDependencies": {
     "iron-test-helpers": "*",
